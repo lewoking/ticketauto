@@ -1,7 +1,7 @@
 // node 后端服务器
 
 const userApi = require('./api/userApi');
-
+const ticketApi = require('./api/ticketApi');
 const fs = require('fs');
 
 const path = require('path');
@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // 后端api路由
 
 app.use('/api/user', userApi);
+app.use('/api/ticket', ticketApi);
 
 // 监听端口
 

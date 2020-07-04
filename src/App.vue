@@ -309,10 +309,32 @@ export default {
       this.restaurants = this.loadAll();
     },
     submitForm() {
-      this.$refs['elForm'].validate(valid => {
-        if (!valid) return
-        // TODO 提交表单
-      })
+    var ph = this.formData.ph
+    var plx = this.formData.plx
+    var fzr = this.formData.fzr
+    var nr = this.formData.nr
+    var qfr = this.formData.qfr
+    var dd = this.formData.dd
+    var cz = this.formData.cz
+    var mc= this.formData.mc
+
+    axios.post('/api/ticket/addList', {
+      ph: ph,
+      plx: plx,
+      fzr:fzr,
+      qfr:qfr,
+      dd:dd,
+      cz:cz,
+      mc:mc,
+      nr:nr,
+//      jhkg:jhkg,
+//      jhwg:jhwg
+    }).then(function(response) {
+      alert('成功更新' + title + '')
+      this.dialogFormVisible = false
+    }).catch(function(error) {
+      console.log(error)
+    })
     },
     resetForm() {
       this.$refs['elForm'].resetFields()
@@ -327,3 +349,4 @@ export default {
 </script>
 <style>
 </style>
+

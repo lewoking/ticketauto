@@ -1,4 +1,4 @@
-// hireUpi.js
+// ticketUpi.js
 var models = require('../db');
 var express = require('express');
 var router = express.Router();
@@ -18,9 +18,9 @@ var jsonWrite = function (res, ret) {
 
 // 增加
 router.post('/addList', (req, res) => {
-    var sql = $sql.hire.add
+    var sql = $sql.ticket.add
     var params = req.body
-    conn.query(sql, [params.title, params.money, params.degree, params.exp, params.site, params.time, params.addr], function (err, result) {
+    conn.query(sql, [params.ph, params.plx, params.fzr, params.nr, params.qfr, params.dd, params.cz, params.mc], function (err, result) {
         if (err) {
             console.log(err)
         }
@@ -32,9 +32,9 @@ router.post('/addList', (req, res) => {
 
 // 更新
 router.post('/updateList', (req, res) => {
-    var sql = $sql.hire.update
+    var sql = $sql.ticket.update
     var params = req.body
-    conn.query(sql, [params.title, params.hire_id], function (err, result) {
+    conn.query(sql, [params.title, params.ticket_id], function (err, result) {
         if (err) {
             console.log(err)
         }
@@ -46,7 +46,7 @@ router.post('/updateList', (req, res) => {
 
 //查找
 router.get('/searchList', (req, res) => {
-    var sql = $sql.hire.search
+    var sql = $sql.ticket.search
     var params = req.query
     console.log(params)
     conn.query(sql, [params.title], function (err, result) {
@@ -62,7 +62,7 @@ router.get('/searchList', (req, res) => {
 
 // 获取所有list
 router.get('/getAllList', (req, res) => {
-    var sql = $sql.hire.getAll
+    var sql = $sql.ticket.getAll
     var params = req.query
     conn.query(sql, function (err, result) {
         if (err) {
@@ -77,9 +77,9 @@ router.get('/getAllList', (req, res) => {
 
 // 删除
 router.post('/delList', (req, res) => {
-    var sql = $sql.hire.del
+    var sql = $sql.ticket.del
     var params = req.body
-    conn.query(sql, [params.hire_id], function (err, result) {
+    conn.query(sql, [params.ticket_id], function (err, result) {
         if (err) {
             console.log(err)
         }

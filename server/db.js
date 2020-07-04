@@ -10,7 +10,7 @@ module.exports = {
 
         password: 'usbw',
 
-        database: 'test',
+        database: 'ticket',
 
         port: '3306'
 

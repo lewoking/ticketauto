@@ -7,11 +7,15 @@ var sqlMap = {
         select_password: 'SELECT * from user where password = ?'      //查询 password
     },
     // 招聘
-    hire: {
-        add: 'insert into hire(hire_id, title, money, degree, exp, site, time, addr) values (0, ?, ?, ?, ?, ?, ?, ?)',
-        getAll: 'SELECT * from hire',
-        search: 'select * from hire where title = ?',
-        update: 'update hire set title = ? where hire_id = ?'
+    ticket: {
+        add: 'INSERT INTO ticket.history (ph,plx,fzr,qfr,dd,cz,mc,nr) VALUES (?,?,?,?,?,?,?,?,?,?,?)',
+        getfgrw: 'SELECT * from work where ph = ? and plx = ?',
+        getwxd: 'SELECT * from warn where ph = ? and plx = ? and iszy = 0',
+        getzy: 'SELECT * from warn where ph = ? and plx = ? and iszy = 1',
+        search: 'select * from history where ph = ? and plx = ?',
+        delfgrw: 'delete from work where ph = ? and plx = ? and fg = ?',
+        delwxd: 'delete from wran where ph = ? and plx = ?  and iszy = 0 and zywx=?',
+        delzy: 'delete from warn where ph = ? and plx = ? and iszy = 1 and zywx=?'
     }
 }
 
