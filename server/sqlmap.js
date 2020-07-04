@@ -2,7 +2,7 @@
 var sqlMap = {
     // 用户
     user: {
-        add: 'insert into user(id, username, password) values (0, ?, ?)',
+        add: 'insert into user(name, age) values (?,?)',
         select_name: 'SELECT * from user where username = ?',    //查询 username
         select_password: 'SELECT * from user where password = ?'      //查询 password
     },
