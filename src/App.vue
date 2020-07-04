@@ -47,14 +47,29 @@
             </el-input>
           </el-form-item>
         </el-col>
-                <el-col :span="24">
+                <el-col :span="12">
           <el-form-item label="计划时间" prop="jh">
             <el-date-picker type="datetimerange" v-model="formData.jh" format="yyyy-MM-dd HH:mm:ss"
               value-format="yyyy-MM-dd HH:mm:ss" :style="{width: '100%'}" start-placeholder="开始日期"
               end-placeholder="结束日期" range-separator="至" clearable></el-date-picker>
           </el-form-item>
         </el-col>
-    <el-col :span="9">
+
+          <el-col :span="3">
+    <el-form-item size="large">
+    <el-button type="primary" @click="submitForm">提交</el-button>
+
+    </el-form-item>
+        </el-col>
+
+        <el-col :span="3">
+    <el-form-item size="large">
+
+    <el-button @click="resetForm">重置</el-button>
+    </el-form-item>
+        </el-col>
+
+    <el-col :span="12">
             <el-autocomplete
             v-model="state"
             :fetch-suggestions="querySearchAsync"
@@ -63,9 +78,11 @@
             @select="handleSelect"
             ></el-autocomplete>
     </el-col>
+
+          
             <el-col :span="3">
           <el-form-item size="large">
-            <el-button @click="addwxd">增加工作任务</el-button>
+            <el-button @click="addwork">增加工作任务</el-button>
           </el-form-item>
         </el-col>
 
@@ -81,19 +98,7 @@
           </el-form-item>
         </el-col>
 
-        <el-col :span="2">
-    <el-form-item size="large">
-    <el-button type="primary" @click="submitForm">提交</el-button>
 
-    </el-form-item>
-        </el-col>
-
-        <el-col :span="2">
-    <el-form-item size="large">
-
-    <el-button @click="resetForm">重置</el-button>
-    </el-form-item>
-        </el-col>
 
         <el-col :span="12">
    <el-table
