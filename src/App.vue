@@ -3,135 +3,187 @@
     <el-row :gutter="18">
       <el-form ref="elForm" :model="formData" :rules="rules" size="small" label-width="108px">
         <el-col :span="23">
-          <el-form-item label-width="-1px" label="票类型" prop="field103">
-            <el-radio-group v-model="formData.field103" size="small">
-              <el-radio-button v-for="(item, index) in field103Options" :key="index" :label="item.value"
+          <el-form-item label-width="-1px" label="票类型" prop="plx">
+            <el-radio-group v-model="formData.plx" size="small">
+              <el-radio-button v-for="(item, index) in plxOptions" :key="index" :label="item.value"
                 :disabled="item.disabled">{{item.label}}</el-radio-button>
             </el-radio-group>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="工作负责人" prop="field101">
-            <el-input v-model="formData.field101" placeholder="负责人" clearable :style="{width: '100%'}">
-            </el-input>
+          <el-form-item label="工作负责人" prop="fzr">
+            <el-input v-model="formData.fzr" placeholder="负责人" clearable :style="{width: '100%'}"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="票号" prop="field109">
-            <el-input v-model="formData.field109" placeholder="请输入票号" clearable :style="{width: '100%'}">
-            </el-input>
+          <el-form-item label="票号" prop="ph">
+            <el-input v-model="formData.ph" placeholder="请输入票号" :style="{width: '100%'}"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="工作签发人" prop="field107">
-            <el-input v-model="formData.field107" placeholder="签发人" clearable :style="{width: '100%'}">
-            </el-input>
+          <el-form-item label="工作签发人" prop="qfr">
+            <el-input v-model="formData.qfr" placeholder="签发人" clearable :style="{width: '100%'}"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="地点" prop="field112">
-            <el-input v-model="formData.field112" placeholder="请输入地点" clearable :style="{width: '100%'}">
-            </el-input>
+          <el-form-item label="地点" prop="dd">
+            <el-input v-model="formData.dd" placeholder="请输入地点" clearable :style="{width: '100%'}"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="厂站" prop="field111">
-            <el-input v-model="formData.field111" placeholder="请输入厂站" clearable :style="{width: '100%'}">
-            </el-input>
+          <el-form-item label="厂站" prop="cz">
+            <el-input v-model="formData.cz" placeholder="请输入厂站" clearable :style="{width: '100%'}"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="设备双重名称" prop="field113">
-            <el-input v-model="formData.field113" placeholder="请输入设备双重名称" clearable :style="{width: '100%'}">
+          <el-form-item label="设备双重名称" prop="mc">
+            <el-input v-model="formData.mc" placeholder="请输入设备双重名称" clearable :style="{width: '100%'}">
             </el-input>
           </el-form-item>
         </el-col>
         <el-col :span="24">
-          <el-form-item label="工作内容" prop="field114">
-            <el-input v-model="formData.field114" placeholder="请输入工作内容" clearable :style="{width: '100%'}">
+          <el-form-item label="工作内容" prop="nr">
+            <el-input v-model="formData.nr" placeholder="请输入工作内容" clearable :style="{width: '100%'}">
             </el-input>
           </el-form-item>
         </el-col>
-        <el-col :span="6">
-          <el-form-item label-width="0" prop="field115">
-            <el-input v-model="formData.field115" placeholder="分工1" clearable :style="{width: '100%'}">
-            </el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="18">
-          <el-form-item label-width="0" prop="field116">
-            <el-input v-model="formData.field116" placeholder="任务1" clearable :style="{width: '100%'}">
-            </el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="6">
-          <el-form-item label-width="0" prop="field118">
-            <el-input v-model="formData.field118" placeholder="分工2" clearable :style="{width: '100%'}">
-            </el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="18">
-          <el-form-item label-width="0" prop="field119">
-            <el-input v-model="formData.field119" placeholder="任务2" clearable :style="{width: '100%'}">
-            </el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="6">
-          <el-form-item label-width="0" prop="field120">
-            <el-input v-model="formData.field120" placeholder="分工3" clearable :style="{width: '100%'}">
-            </el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="18">
-          <el-form-item label-width="0" prop="field121">
-            <el-input v-model="formData.field121" placeholder="任务3" clearable :style="{width: '100%'}">
-            </el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="6">
-          <el-form-item label-width="0" prop="field122">
-            <el-input v-model="formData.field122" placeholder="分工4" clearable :style="{width: '100%'}">
-            </el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="18">
-          <el-form-item label-width="0" prop="field123">
-            <el-input v-model="formData.field123" placeholder="任务4" clearable :style="{width: '100%'}">
-            </el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="24">
-          <el-form-item label="现场危险点分析" prop="field124">
-            <el-input v-model="formData.field124" type="textarea" placeholder="请输入现场危险点分析"
-              :autosize="{minRows: 2, maxRows: 6}" :style="{width: '100%'}"></el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="24">
-          <el-form-item label="计划时间" prop="field127">
-            <el-date-picker type="datetimerange" v-model="formData.field127" format="yyyy-MM-dd HH:mm:ss"
+                <el-col :span="24">
+          <el-form-item label="计划时间" prop="jh">
+            <el-date-picker type="datetimerange" v-model="formData.jh" format="yyyy-MM-dd HH:mm:ss"
               value-format="yyyy-MM-dd HH:mm:ss" :style="{width: '100%'}" start-placeholder="开始日期"
               end-placeholder="结束日期" range-separator="至" clearable></el-date-picker>
           </el-form-item>
         </el-col>
-        <el-col :span="24">
-          <el-form-item label="安全注意事项" prop="field129">
-            <el-cascader v-model="formData.field129" :options="field129Options" :props="field129Props"
-              :style="{width: '100%'}" placeholder="请选择安全注意事项" filterable clearable></el-cascader>
-          </el-form-item>
-        </el-col>
-        <el-col :span="24">
+    <el-col :span="9">
+            <el-autocomplete
+            v-model="state"
+            :fetch-suggestions="querySearchAsync"
+            :style="{width: '100%'}"
+            placeholder=" 危 险 点 分 析 及 安 全 注 意 事 项 "
+            @select="handleSelect"
+            ></el-autocomplete>
+    </el-col>
+            <el-col :span="3">
           <el-form-item size="large">
-            <el-button type="primary" @click="submitForm">提交</el-button>
-            <el-button @click="resetForm">重置</el-button>
+            <el-button @click="addwxd">增加工作任务</el-button>
           </el-form-item>
         </el-col>
+
+        <el-col :span="3">
+          <el-form-item size="large">
+            <el-button @click="addwxd">增加危险点分析</el-button>
+          </el-form-item>
+        </el-col>
+        
+        <el-col :span="3">
+          <el-form-item size="large">
+            <el-button @click="addzy">增加安全事项</el-button>
+          </el-form-item>
+        </el-col>
+
+        <el-col :span="2">
+    <el-form-item size="large">
+    <el-button type="primary" @click="submitForm">提交</el-button>
+
+    </el-form-item>
+        </el-col>
+
+        <el-col :span="2">
+    <el-form-item size="large">
+
+    <el-button @click="resetForm">重置</el-button>
+    </el-form-item>
+        </el-col>
+
+        <el-col :span="12">
+   <el-table
+    :data="zytable"
+    stripe
+    style="width: 100%">
+    <el-table-column
+      prop="zy"
+      label="工作注意事项"
+      width="550">
+    </el-table-column>
+    <el-table-column
+      fixed="right"
+      label="操作"
+      width="60">
+      <template slot-scope="scope">
+        <el-button
+          @click.native.prevent="deleteRow(scope.$index, zytable)"
+          type="text"
+          size="small">
+          移除
+        </el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+  </el-col>
+  
+
+
+    <el-col :span="12">
+  <el-table
+    :data="fgtable"
+    stripe
+    style="width: 100%">
+    <el-table-column
+      prop="fg"
+      label="工作班人员"
+      width="100">
+    </el-table-column>
+    <el-table-column
+      prop="rw"
+      label="任务"
+      width="450">
+    </el-table-column>
+    <el-table-column
+      fixed="right"
+      label="操作"
+      width="60">
+      <template slot-scope="scope">
+        <el-button
+          @click.native.prevent="deleteRow(scope.$index, fgtable)"
+          type="text"
+          size="small">
+          移除
+        </el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+          </el-col>
+
+    <el-col :span="12">
+  <el-table
+    :data="wxdtable"
+    stripe
+    style="width: 100%">
+    <el-table-column
+      prop="wxd"
+      label="危险点分析"
+      width="550">
+    </el-table-column>
+    <el-table-column
+      fixed="right"
+      label="操作"
+      width="60">
+      <template slot-scope="scope">
+        <el-button
+          @click.native.prevent="deleteRow(scope.$index, wxdtable)"
+          type="text"
+          size="small">
+          移除
+        </el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+        </el-col>
+
+
+
       </el-form>
     </el-row>
-        <form>
-      <input type="text" name="username" v-model="userName"> <br>
-      <input type="text" name="age" v-model="age"> <br>
-      <a href="javascript:;" @click="addUser">提交</a>
-    </form>
   </div>
 </template>
 <script>
@@ -140,139 +192,82 @@ export default {
   props: [],
   data() {
     return {
-              msg: 'Welcome to Your Vue.js App',
-      userName: '',
-      age: '',
+        restaurants: [],
+        state: '',
+        timeout:  null,
+        fgtable: [{
+          fg: '2016-05-02',
+          rw: '王小虎'
+
+        }, {
+          fg: '2016-05-04',
+          rw: '王小虎'
+       
+        }],
+        wxdtable: [{
+          wxd: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          wxd: '上海市普陀区金沙江路 1517 弄'
+        }],
+                zytable: [{
+          zy: '上海市普陀区金沙江路9999 弄'
+        }, {
+          zy: '上海靠普陀区金沙江路 1517 弄'
+        }],
       formData: {
-        field103: 2,
-        field101: undefined,
-        field109: undefined,
-        field107: undefined,
-        field112: undefined,
-        field111: undefined,
-        field113: undefined,
-        field114: undefined,
-        field115: undefined,
-        field116: undefined,
-        field118: undefined,
-        field119: '',
-        field120: undefined,
-        field121: undefined,
-        field122: undefined,
-        field123: undefined,
-        field124: undefined,
-        field127: null,
-        field129: [1, 2]
-      },
+        plx: 2,
+        fzr: undefined,
+        ph: undefined,
+        qfr: undefined,
+        dd: undefined,
+        cz: undefined,
+        mc: undefined,
+        nr: ''},
       rules: {
-        field103: [{
+        plx: [{
           required: true,
           message: '票类型不能为空',
           trigger: 'change'
         }],
-        field101: [{
+        fzr: [{
           required: true,
           message: '负责人',
           trigger: 'blur'
         }],
-        field109: [{
+        ph: [{
           required: true,
           message: '请输入票号',
           trigger: 'blur'
         }],
-        field107: [{
-          required: true,
-          message: '签发人',
-          trigger: 'blur'
-        }],
-        field112: [{
+        qfr: [],
+        dd: [{
           required: true,
           message: '请输入地点',
           trigger: 'blur'
         }],
-        field111: [{
+        cz: [{
           required: true,
           message: '请输入厂站',
           trigger: 'blur'
         }],
-        field113: [{
+        mc: [{
           required: true,
           message: '请输入设备双重名称',
           trigger: 'blur'
         }],
-        field114: [{
+        nr: [{
           required: true,
           message: '请输入工作内容',
           trigger: 'blur'
         }],
-        field115: [{
-          required: true,
-          message: '分工1',
-          trigger: 'blur'
-        }],
-        field116: [{
-          required: true,
-          message: '任务1',
-          trigger: 'blur'
-        }],
-        field118: [{
-          required: true,
-          message: '分工2',
-          trigger: 'blur'
-        }],
-        field119: [{
-          required: true,
-          message: '任务2',
-          trigger: 'blur'
-        }],
-        field120: [{
-          required: true,
-          message: '分工3',
-          trigger: 'blur'
-        }],
-        field121: [{
-          required: true,
-          message: '任务3',
-          trigger: 'blur'
-        }],
-        field122: [{
-          required: true,
-          message: '分工4',
-          trigger: 'blur'
-        }],
-        field123: [{
-          required: true,
-          message: '任务4',
-          trigger: 'blur'
-        }],
-        field124: [{
-          required: true,
-          message: '请输入现场危险点分析',
-          trigger: 'blur'
-        }],
-        field127: [{
-          required: true,
-          message: '计划时间不能为空',
-          trigger: 'change'
-        }],
-        field129: [{
-          required: true,
-          type: 'array',
-          message: '请至少选择一个field129',
-          trigger: 'change'
-        }]
       },
-      field103Options: [{
+      plxOptions: [{
         "label": "电力监控系统工作票",
         "value": 1
       }, {
         "label": "变电站第二种工作票",
         "value": 2
       }],
-      field129Options: [],
-      field129Props: {
-        "multiple": true
-      }
     }
   },
   computed: {},
@@ -280,6 +275,34 @@ export default {
   created() {},
   mounted() {},
   methods: {
+       loadAll() {
+        return [
+          { "value": "三全鲜食（北新泾店）", "address": "长宁区新渔路144号" },
+          { "value": "Hot honey 首尔炸鸡（仙霞路）", "address": "上海市长宁区淞虹路661号" },
+          { "value": "新旺角茶餐厅" }
+        ];
+      },
+      querySearchAsync(queryString, cb) {
+        var restaurants = this.restaurants;
+        var results = queryString ? restaurants.filter(this.createStateFilter(queryString)) : restaurants;
+
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => {
+          cb(results);
+        }, 3000 * Math.random());
+      },
+      createStateFilter(queryString) {
+        return (state) => {
+          return (state.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0);
+        };
+      },
+      handleSelect(item) {
+        console.log(item);
+      }
+    },
+    mounted() {
+      this.restaurants = this.loadAll();
+    },
     submitForm() {
       this.$refs['elForm'].validate(valid => {
         if (!valid) return
@@ -289,22 +312,12 @@ export default {
     resetForm() {
       this.$refs['elForm'].resetFields()
     },
-    getField129Options() {
+    getZyOptions() {
       // TODO 发起请求获取数据
-      this.field129Options
-    },    
-    addUser() {
-      var name = this.userName;
-      var age = this.age;
-      this.$http.post('/api/user/addUser', {
-        username: name,
-        age: age
-      },{}).then((response) => {
-        console.log(response);
-      })
+      this.zyOptions
     },
   }
-}
+
 
 </script>
 <style>
