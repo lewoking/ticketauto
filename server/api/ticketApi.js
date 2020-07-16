@@ -62,7 +62,7 @@ router.get('/searchList', (req, res) => {
 
 // 获取所有list
 router.get('/getAllList', (req, res) => {
-    var sql = $sql.ticket.getAll
+    var sql = $sql.ticket.search
     var params = req.query
     conn.query(sql, function (err, result) {
         if (err) {
